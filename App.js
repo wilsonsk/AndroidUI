@@ -19,20 +19,37 @@ const instructions = Platform.select({
     'Shake or press menu button for dev menu',
 });
 
-export default class App extends Component<{}> {
+class Component1 extends Component<{}> {
+  constructor(props){
+	  super(props);
+	  this.state = {test: "Hello my friend, "};
+  }
+
   render() {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
-          Welcome to React Native!
+	    {this.state.test} {this.props.name}
         </Text>
-        <Text style={styles.instructions}>
-          To get started, edit App.js
+        <Text style={styles.textContent}>
+	    {this.props.textContent}
         </Text>
         <Text style={styles.instructions}>
           {instructions}
         </Text>
       </View>
+    );
+  }
+}
+
+export default class App extends Component<{}> {
+  constructor(props){
+	  super(props);
+  }
+
+  render() {
+    return (
+	    <Component1 name="Skyler" textContent="This is a React Native App running on Android OS" />
     );
   }
 }
