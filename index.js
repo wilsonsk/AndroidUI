@@ -1,4 +1,4 @@
 import { AppRegistry } from 'react-native';
-import App from './App';
+import Project from './app/App';
 
-AppRegistry.registerComponent('AndroidUI', () => App);
+AppRegistry.registerComponent('AndroidUI', () => Project);

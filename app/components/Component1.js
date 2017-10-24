@@ -5,12 +5,14 @@
  */
 
 import React, { Component } from 'react';
-import {
-  Platform,
-  StyleSheet,
-  Text,
-  View
-} from 'react-native';
+import { Platform, View, Text, StyleSheet } from 'react-native';
+
+
+/*
+ *
+ * Example device dependent logic
+ *
+ */
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' +
@@ -19,7 +21,13 @@ const instructions = Platform.select({
     'Shake or press menu button for dev menu',
 });
 
-class Component1 extends Component<{}> {
+/*
+ *
+ * RN Component
+ *
+ */
+
+export default class Component1 extends Component<{}> {
   constructor(props){
 	  super(props);
 	  this.state = {test: "Hello my friend, "};
@@ -42,17 +50,11 @@ class Component1 extends Component<{}> {
   }
 }
 
-export default class App extends Component<{}> {
-  constructor(props){
-	  super(props);
-  }
-
-  render() {
-    return (
-	    <Component1 name="Skyler" textContent="This is a React Native App running on Android OS" />
-    );
-  }
-}
+/*
+ *
+ * Style Sheet initialization and creation for this component
+ *
+ */
 
 const styles = StyleSheet.create({
   container: {
