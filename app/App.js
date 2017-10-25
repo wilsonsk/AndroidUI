@@ -15,7 +15,7 @@ class HomeScreen extends Component<{}>{
 	constructor(props){
 		super(props);
 		this.state = {
-			data: [{activityName: "LinearLayout Horizontal"}]
+			data: [{activity: "Activity1"}, {activity: "Activity2"}]
 		}
 	}
 
@@ -30,8 +30,7 @@ class HomeScreen extends Component<{}>{
 				<Text>OSU CS496 App: Home Screen</Text>
 				<FlatList 
 					data={this.state.data}
-					keyExtractor={item => item.activityName}
-					renderItem={({ item }) => <View><Button onPress={() => navigate('Activity2')} title="${}" /></View>}
+					renderItem={({ item }) => <View><Button onPress={() => navigate(item.activity)} title={'Activity'} /></View>}
 				/>
 			</View>
 		);
