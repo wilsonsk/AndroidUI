@@ -1,36 +1,43 @@
 /**
- * Sample React Native App
+ * Android UI App for Oregon State University CS 496
  * https://github.com/facebook/react-native
  * @flow
  */
 
 import React, { Component } from 'react';
 import { StackNavigator } from 'react-navigation';
+import { View, Text, Button } from 'react-native';
 
-// import all activities
-import { Activity1, Activity2, Activity3, Activity4, Activity5 } from './screens/AllScreens';
+// import Activities/Screens for Project (Main Program (App))
+import LinearVH from './screens/LinearHV';
 
-/*
- *
- * Project Composition and Exporting -- React Navigator's Stack Navigator
- *
- */
+class HomeScreen extends Component<{}>{
+	constructor(props){
+		super(props);
+	}
+
+	static navigationOptions = {
+		title: 'Home Screen',
+	};
+
+	render(){
+		const { navigate } = this.props.navigation;
+		return(
+			<View>
+				<Text>OSU CS496 App: Home Screen</Text>
+				<Button onPress={() => navigate('LinearHV')} title="Activity 2" />
+			</View>
+		);
+	}
+}
 
 export default Project = StackNavigator({
-	First: { 
-		screen: Activity1
+	First: {
+		screen: HomeScreen
 	},
 	Second: {
-		screen: Activity2
-	},
-	Third: { 
-		screen: Activity3
-	},
-	Fourth: {
-		screen: Activity4
-	},
-	Fifth: { 
-		screen: Activity5
+		screen: LinearVH
 	}
-  
 });
+
+
