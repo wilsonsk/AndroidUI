@@ -13,20 +13,20 @@ import React, { Component } from 'react';
 // import default RN components
 import { View, Button, Text } from 'react-native';
 
-export default class LinearVH extends Component<{}>{
+export default class LinearH extends Component<{}>{
 	constructor(props){
 		super(props);
 	}
 	
 	static navigationOptions = {
-		title: "Activity2",
+		title: "LinearH",
 	};
 
 	render(){
 		const { navigate } = this.props.navigation;
 		return (
 			<View>
-				<Text>This is Activity 2 placeholder</Text>
+				<Text>"TEST ACTIVITY 2"</Text>
 			</View>
 		);		
 	}

@@ -6,18 +6,21 @@
 
 import React, { Component } from 'react';
 import { StackNavigator } from 'react-navigation';
-import { View, Text, Button } from 'react-native';
+import { FlatList, View, Text, Button } from 'react-native';
 
 // import Activities/Screens for Project (Main Program (App))
-import LinearVH from './screens/LinearHV';
+import LinearH from './screens/LinearH';
 
 class HomeScreen extends Component<{}>{
 	constructor(props){
 		super(props);
+		this.state = {
+			data: [{activityName: "LinearLayout Horizontal"}]
+		}
 	}
 
 	static navigationOptions = {
-		title: 'Home Screen',
+		title: 'HomeScreen',
 	};
 
 	render(){
@@ -25,19 +28,21 @@ class HomeScreen extends Component<{}>{
 		return(
 			<View>
 				<Text>OSU CS496 App: Home Screen</Text>
-				<Button onPress={() => navigate('LinearHV')} title="Activity 2" />
+				<FlatList 
+					data={this.state.data}
+					keyExtractor={item => item.activityName}
+					renderItem={({ item }) => <View><Button onPress={() => navigate('Activity2')} title="${}" /></View>}
+				/>
 			</View>
 		);
 	}
 }
 
 export default Project = StackNavigator({
-	First: {
+	Activity1: {
 		screen: HomeScreen
 	},
-	Second: {
-		screen: LinearVH
+	Activity2: {
+		screen: LinearH
 	}
 });
-
-
