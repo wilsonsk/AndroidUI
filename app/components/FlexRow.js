@@ -33,26 +33,22 @@ export default class FlexRow extends Component<{}> {
   constructor(props){
 	  super(props);
 	  this.state = {
-		  data: [{content: '1'}, {content: '2'}, {content: '3'}, {content: '4'}, {content: '5'}]
+		  data: [{content: 'Element 1'}, {content: 'Element 2'}, {content: 'Element 3'}, {content: 'Element 4'}, {content: 'Element 5'}]
 	  }
   }
 
   render() {
     return (
-//        <View style={styles.container}>
-//            <FlatList
-//		data={this.state.data}
-//	    	keyExtractor={item => item.content}
-//	        renderItem={({ item }) => <LayoutItem style={styles.content}itemContent={item.content}/>}
-//	    />
-//	</View>
-	    <View style={styles.container}>
-		    <Text style={styles.content}>{this.state.data[0].content}</Text>
-		    <Text style={styles.content}>{this.state.data[1].content}</Text>
-		    <Text style={styles.content}>{this.state.data[2].content}</Text>
-		    <Text style={styles.content}>{this.state.data[3].content}</Text>
-		    <Text style={styles.content}>{this.state.data[4].content}</Text>
-	    </View>
+        <View style={styles.container}>
+	    <Text style={styles.content}>TEST</Text>
+	</View>
+//	    <View style={styles.container}>
+//		    <Text style={styles.content}>{this.state.data[0].content}</Text>
+//		    <Text style={styles.content}>{this.state.data[1].content}</Text>
+//		    <Text style={styles.content}>{this.state.data[2].content}</Text>
+//		    <Text style={styles.content}>{this.state.data[3].content}</Text>
+//		    <Text style={styles.content}>{this.state.data[4].content}</Text>
+//	    </View>
     );
   }
 }
@@ -65,15 +61,13 @@ export default class FlexRow extends Component<{}> {
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
+    minHeight: '10%',
     flexDirection: 'row',
-    justifyContent: 'space-around',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    backgroundColor: '#FF402C',
   },
   content: {
     flex: 1,
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
+    alignItems: 'center',
   },
 });

@@ -9,7 +9,7 @@ export default class LayoutItem extends Component<{}>{
 
 	render(){
 		return(
-			<Text>{this.props.itemContent}</Text>
+			<Text style={this.props.style}>{this.props.itemContent}</Text>
 		);
 	}
 }
