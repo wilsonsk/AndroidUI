@@ -7,11 +7,11 @@
 
 import React, { Component } from 'react';
 
-// import necessary custom RN components
-// import Component1 from '../components/';
-
 // import default RN components
 import { View, Button, Text } from 'react-native';
+
+// import custom RN components
+import FlexRow from '../components/FlexRow';
 
 export default class LinearH extends Component<{}>{
 	constructor(props){
@@ -26,7 +26,7 @@ export default class LinearH extends Component<{}>{
 		const { navigate } = this.props.navigation;
 		return (
 			<View>
-				<Text>"TEST ACTIVITY 2"</Text>
+				<FlexRow />
 			</View>
 		);		
 	}

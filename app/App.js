@@ -15,7 +15,7 @@ class HomeScreen extends Component<{}>{
 	constructor(props){
 		super(props);
 		this.state = {
-			data: [{activity: "Activity1"}, {activity: "Activity2"}]
+			data: [{activity: "Activity1", title: "HomeScreen"}, {activity: "Activity2", title: "Linear Layout Horizontal"}]
 		}
 	}
 
@@ -30,7 +30,8 @@ class HomeScreen extends Component<{}>{
 				<Text>OSU CS496 App: Home Screen</Text>
 				<FlatList 
 					data={this.state.data}
-					renderItem={({ item }) => <View><Button onPress={() => navigate(item.activity)} title={'Activity'} /></View>}
+					keyExtractor={item => item.activity}
+					renderItem={({ item }) => <View><Button onPress={() => navigate(item.activity)} title={item.title} /></View>}
 				/>
 			</View>
 		);
