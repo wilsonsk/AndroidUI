@@ -68,7 +68,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     minHeight: '100%',
-    flexDirection: 'row',
     justifyContent: 'space-around',
     alignItems: 'center',
   },
@@ -77,7 +76,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
     minHeight: '10%',
     textAlign: 'center',
-    alignSelf: 'center',
+    alignSelf: 'stretch',
     borderWidth: 1,
     backgroundColor: '#F5FCFF',
   },
