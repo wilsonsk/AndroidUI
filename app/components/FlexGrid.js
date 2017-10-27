@@ -29,7 +29,7 @@ const instructions = Platform.select({
  *
  */
 
-export default class FlexRow extends Component<{}> {
+export default class FlexGrid extends Component<{}> {
   constructor(props){
 	  super(props);
 	  this.state = {
@@ -67,17 +67,19 @@ export default class FlexRow extends Component<{}> {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    minHeight: '100%',
     flexDirection: 'row',
+    flexWrap: 'wrap',
+    minHeight: '50%',
     justifyContent: 'space-around',
     alignItems: 'center',
   },
   content: {
     flex: 1,
     fontSize: 20,
-    minHeight: '100%',
+    minHeight: '50%',
+    minWidth: '50%',
     textAlign: 'center',
-    alignSelf: 'center',
+    alignSelf: 'flex-start',
     borderWidth: 1,
     backgroundColor: '#F5FCFF',
   },

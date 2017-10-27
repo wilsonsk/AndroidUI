@@ -29,7 +29,7 @@ const instructions = Platform.select({
  *
  */
 
-export default class FlexRow extends Component<{}> {
+export default class FlexRelative extends Component<{}> {
   constructor(props){
 	  super(props);
 	  this.state = {
@@ -39,14 +39,6 @@ export default class FlexRow extends Component<{}> {
 
   render() {
     return (
-//        <View style={styles.container}>
-//            <FlatList
-//	    	horizontal={true}
-//		data={this.state.data}
-//	    	keyExtractor={item => item.content}
-//	        renderItem={({ item }) => <LayoutItem style={styles.content} itemContent={item.content}/>}
-//	    />
-//	</View>
 	    <View style={styles.container}>
 		    <Text style={styles.content}>{this.state.data[0].content}</Text>
 		    <Text style={styles.content}>{this.state.data[1].content}</Text>
@@ -67,17 +59,19 @@ export default class FlexRow extends Component<{}> {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    minHeight: '100%',
     flexDirection: 'row',
+    flexWrap: 'wrap',
+    minHeight: '50%',
     justifyContent: 'space-around',
     alignItems: 'center',
   },
   content: {
     flex: 1,
     fontSize: 20,
-    minHeight: '100%',
+    minHeight: '50%',
+    minWidth: '50%',
     textAlign: 'center',
-    alignSelf: 'center',
+    alignSelf: 'flex-start',
     borderWidth: 1,
     backgroundColor: '#F5FCFF',
   },

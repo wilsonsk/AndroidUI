@@ -11,12 +11,14 @@ import { FlatList, View, Text, Button } from 'react-native';
 // import Activities/Screens for Project (Main Program (App))
 import LinearH from './screens/LinearH';
 import LinearV from './screens/LinearV';
+import GridLayout from './screens/GridLayout';
+import RelativeLayout from './screens/RelativeLayout';
 
 class HomeScreen extends Component<{}>{
 	constructor(props){
 		super(props);
 		this.state = {
-			data: [{activity: "Activity1", title: "HomeScreen"}, {activity: "Activity2", title: "Linear Layout Horizontal"}, {activity: "Activity3", title: "Linear Layout Verticle"}]
+			data: [{activity: "Activity1", title: "HomeScreen"}, {activity: "Activity2", title: "Linear Layout Horizontal"}, {activity: "Activity3", title: "Linear Layout Verticle"}, {activity: "Activity4", title: "Grid Layout"}, {activity: "Activity5", title: "Relative Layout"}]
 		}
 	}
 
@@ -48,5 +50,11 @@ export default Project = StackNavigator({
 	},
 	Activity3: {
 		screen: LinearV
+	},
+	Activity4: {
+		screen: GridLayout
+	},
+	Activity5: {
+		screen: RelativeLayout
 	}
 });
