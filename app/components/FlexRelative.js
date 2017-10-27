@@ -11,6 +11,11 @@ import { FlatList, Platform, View, Text, StyleSheet } from 'react-native';
 import LayoutItem from './LayoutItem';
 
 /*
+ * Golden Ratio for UI
+ */
+var GOLDEN_RATIO = 1.61803398875;
+
+/*
  *
  * Example device dependent logic
  *
@@ -41,6 +46,23 @@ export default class FlexRelative extends Component<{}> {
     return (
 	    <View style={styles.container}>
 	    	<View style={styles.sideBar}>
+	    		<View style={styles.sideBarUpperRect} />
+	    		<View style={styles.sideBarLowerRowParent}>
+		    		<View style={styles.sideBarLowerRect} />
+	    			<View style={styles.sideBarInnerColumn}>
+	    				<View style={styles.sideBarInnerRow}>
+				    		<View style={styles.sideBarInnerRowSquare} />
+	    					<View style={styles.sideBarInnerInnerColumn}>
+	    						<View style={styles.sideBarInnerInnerInnerRow}>
+								<View style={styles.sideBarInnerInnerInnerRowSquare1} />
+								<View style={styles.sideBarInnerInnerInnerRowSquare2} />
+							</View>
+							<View style={styles.sideBarInnerInnerLowerSquare} />
+	    					</View>
+	    				</View>
+			    		<View style={styles.sideBarInnerLowerSquare} />
+	    			</View>
+	    		</View>
 	    	</View>
 	    	<View style={styles.mainBody}>
 	    	</View>
@@ -64,13 +86,63 @@ const styles = StyleSheet.create({
   sideBar: {
     flex: 1,
     backgroundColor: '#FF402C', // orange
+    flexDirection: 'column',
   },
-  mainBody: {
-    flex: 3,
+  sideBarLowerRowParent: {
+    flex: 1,
+    backgroundColor: '#FF402C', // orange
+    flexDirection: 'row',
+  },
+  sideBarUpperRect: {
+    flex: GOLDEN_RATIO,
+    backgroundColor: '#8BC34A', // green
+  },
+  sideBarLowerRect: {
+    flex: GOLDEN_RATIO,
+    backgroundColor: '#ffe11a', // yellow
+  },
+  sideBarInnerColumn: {
+    flex: 1,
+    backgroundColor: '#ffe11a', // yellow
+  },
+  sideBarInnerRow: {
+    flex: 1,
+    flexDirection: 'row',
+    backgroundColor: '#FF402C', // orange
+  },
+  sideBarInnerRowSquare: {
+    flex: GOLDEN_RATIO,
     backgroundColor: '#2196F3', // blue
   },
-  sideBarContent: {
- 
+  sideBarInnerInnerColumn: {
+    flex: 1,
+    flexDirection: 'column',
+    backgroundColor: '#ffe11a', // yellow
+  },
+  sideBarInnerInnerInnerRow: {
+    flex: 1,
+    flexDirection: 'row',
+    backgroundColor: '#000000', // black
+  },
+  sideBarInnerInnerInnerRowSquare1: {
+    flex: GOLDEN_RATIO,
+    backgroundColor: '#FF402C', // orange
+  },
+  sideBarInnerInnerInnerRowSquare2: {
+    flex: GOLDEN_RATIO,
+    backgroundColor: '#000000', // black
+  },
+  sideBarInnerInnerLowerSquare: {
+    flex: GOLDEN_RATIO,
+    backgroundColor: '#FFFFFF', // white
+  },
+  sideBarInnerLowerSquare: {
+    flex: GOLDEN_RATIO,
+    backgroundColor: '#FF402C', // orange
+  },
+  mainBody: {
+    flex: GOLDEN_RATIO,
+    backgroundColor: '#2196F3', // blue
   },
   mainBodyContent: {
   },
