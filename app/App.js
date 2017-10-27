@@ -6,7 +6,7 @@
 
 import React, { Component } from 'react';
 import { StackNavigator } from 'react-navigation';
-import { FlatList, View, Text, Button } from 'react-native';
+import { FlatList, View, Text, Button, StyleSheet } from 'react-native';
 
 // import Activities/Screens for Project (Main Program (App))
 import LinearH from './screens/LinearH';
@@ -29,7 +29,7 @@ class HomeScreen extends Component<{}>{
 	render(){
 		const { navigate } = this.props.navigation;
 		return(
-			<View>
+			<View style={styles.container}>
 				<Text>OSU CS496 App: Home Screen</Text>
 				<FlatList 
 					data={this.state.data}
@@ -56,5 +56,11 @@ export default Project = StackNavigator({
 	},
 	Activity5: {
 		screen: RelativeLayout
+	}
+});
+
+const styles = StyleSheet.create({
+	container: {
+		flex: 1
 	}
 });

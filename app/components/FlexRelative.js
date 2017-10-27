@@ -40,11 +40,10 @@ export default class FlexRelative extends Component<{}> {
   render() {
     return (
 	    <View style={styles.container}>
-		    <Text style={styles.content}>{this.state.data[0].content}</Text>
-		    <Text style={styles.content}>{this.state.data[1].content}</Text>
-		    <Text style={styles.content}>{this.state.data[2].content}</Text>
-		    <Text style={styles.content}>{this.state.data[3].content}</Text>
-		    <Text style={styles.content}>{this.state.data[4].content}</Text>
+	    	<View style={styles.sideBar}>
+	    	</View>
+	    	<View style={styles.mainBody}>
+	    	</View>
 	    </View>
     );
   }
@@ -60,19 +59,21 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: 'row',
-    flexWrap: 'wrap',
-    minHeight: '50%',
-    justifyContent: 'space-around',
-    alignItems: 'center',
+    backgroundColor: '#8BC34A', // green
   },
-  content: {
+  sideBar: {
     flex: 1,
-    fontSize: 20,
-    minHeight: '50%',
-    minWidth: '50%',
-    textAlign: 'center',
-    alignSelf: 'flex-start',
-    borderWidth: 1,
-    backgroundColor: '#F5FCFF',
+    backgroundColor: '#FF402C', // orange
+  },
+  mainBody: {
+    flex: 3,
+    backgroundColor: '#2196F3', // blue
+  },
+  sideBarContent: {
+ 
+  },
+  mainBodyContent: {
+  },
+  nestContent: {
   },
 });

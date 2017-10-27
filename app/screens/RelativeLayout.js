@@ -8,7 +8,7 @@
 import React, { Component } from 'react';
 
 // import default RN components
-import { View, Button, Text } from 'react-native';
+import { View, Button, Text, StyleSheet } from 'react-native';
 
 // import custom RN components
 import FlexRelative from '../components/FlexRelative';
@@ -25,11 +25,15 @@ export default class RelativeLayout extends Component<{}>{
 	render(){
 		const { navigate } = this.props.navigation;
 		return (
-			<View>
+			<View style={styles.container}>
 				<FlexRelative />
 			</View>
 		);		
 	}
 }
 
-
+const styles = StyleSheet.create({
+	container: {
+		flex: 1
+	}
+});

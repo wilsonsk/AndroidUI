@@ -8,7 +8,7 @@
 import React, { Component } from 'react';
 
 // import default RN components
-import { View, Button, Text } from 'react-native';
+import { StyleSheet, View, Button, Text } from 'react-native';
 
 // import custom RN components
 import FlexGrid from '../components/FlexGrid';
@@ -25,11 +25,15 @@ export default class GridLayout extends Component<{}>{
 	render(){
 		const { navigate } = this.props.navigation;
 		return (
-			<View>
+			<View style={styles.container}>
 				<FlexGrid />
 			</View>
 		);		
 	}
 }
 
-
+const styles = StyleSheet.create({
+	container: {
+		flex: 1
+	}
+});
