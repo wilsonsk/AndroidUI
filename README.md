@@ -49,4 +49,5 @@ Chose the 'x86 Images' tab, then select the Marshmellow API Level 23, x86_64 ABI
 react-native run-android
 ```
 
-# To import the project into Android Studio IDE, import the AndroidUI/Android directory into Android Studio
+# To import the project into Android Studio IDE, 
+import the AndroidUI/Android directory into Android Studio
