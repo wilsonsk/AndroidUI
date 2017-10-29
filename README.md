@@ -24,7 +24,9 @@ npm install -g react-native-cli
 
 ```
 git clone https://github.com/wilsonsk/AndroidUI.git
+
 cd AndroidUI
+
 npm install
 ```
 
